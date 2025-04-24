@@ -11,7 +11,6 @@ class Personagem {
       return `${this.nome} ataca com força ${this.forca}!`;
     }
   
-    
     defender() {
       return `${this.nome} defendeu o ataque com defesa ${this.defesa}!`;
     }
@@ -25,11 +24,14 @@ class Personagem {
       this.defesa = 8;
     }
   
+    atacar() {
+      return `${this.nome} arremessa bananas mágicas causando ${this.poder} de dano!`;
+    }
+  
     lancarMagia() {
       return `${this.nome} lança magia com poder ${this.poder}!`;
     }
   
-    
     usarMagia() {
       return `${this.nome} invoca magia ancestral liberando ${this.poder * 1.5} de poder`;
     }
@@ -43,12 +45,15 @@ class Personagem {
       this.defesa = 15;
     }
   
+    atacar() {
+      return `${this.nome} golpeia com machado causando ${this.forca * 1.8} de dano!`;
+    }
+  
     beberVodka() {
       this.vida += 10;
       return `${this.nome} bebe vodka e recupera vida! Vida agora: ${this.vida}`;
     }
   
-    
     ataquePesado() {
       return `${this.nome} desfere um ataque pesado com força ${this.forca * 2}!`;
     }
@@ -60,34 +65,25 @@ class Personagem {
       this.sorte = 30;
     }
   
+    atacar() {
+      const dano = this.forca + Math.floor(Math.random() * this.sorte);
+      return `${this.nome} ataca com sorte, causando ${dano} de dano!`;
+    }
+  
     preverFuturo() {
       return `${this.nome} diz: Você terá sorte hoje`;
     }
   
-   
     jogarMoeda() {
       const resultado = Math.random() > 0.5 ? "Cara" : "Coroa";
       return `${this.nome} jogou a moeda e caiu: ${resultado}`;
     }
   }
   
-  
   const macaco = new MacacoMago("King Kong");
   const russo = new RussoBruxo("Boris");
   const cartoleiro = new Cartoleiro("Zé");
   
-  
   console.log(macaco.atacar());
-  console.log(macaco.defender());
-  console.log(macaco.lancarMagia());
-  console.log(macaco.usarMagia());
-  
   console.log(russo.atacar());
-  console.log(russo.defender());
-  console.log(russo.beberVodka());
-  console.log(russo.ataquePesado());
-  
   console.log(cartoleiro.atacar());
-  console.log(cartoleiro.defender());
-  console.log(cartoleiro.preverFuturo());
-  console.log(cartoleiro.jogarMoeda());
