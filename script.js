@@ -1,18 +1,51 @@
 class Personagem {
+    #vida = 100;
+    #forca = 10;
+    #poder = 20;
+    #defesa = 5;
+  
     constructor(nome) {
       this.nome = nome;
-      this.vida = 100;
-      this.forca = 10;
-      this.poder = 20;
-      this.defesa = 5;
+    }
+  
+    get vida() {
+      return this.#vida;
+    }
+  
+    set vida(valor) {
+      this.#vida = valor;
+    }
+  
+    get forca() {
+      return this.#forca;
+    }
+  
+    set forca(valor) {
+      this.#forca = valor;
+    }
+  
+    get poder() {
+      return this.#poder;
+    }
+  
+    set poder(valor) {
+      this.#poder = valor;
+    }
+  
+    get defesa() {
+      return this.#defesa;
+    }
+  
+    set defesa(valor) {
+      this.#defesa = valor;
     }
   
     atacar() {
-      return `${this.nome} ataca com força ${this.forca}!`;
+      return `${this.nome} ataca com força ${this.#forca}!`;
     }
   
     defender() {
-      return `${this.nome} defendeu o ataque com defesa ${this.defesa}!`;
+      return `${this.nome} defendeu o ataque com defesa ${this.#defesa}!`;
     }
   }
   
@@ -60,9 +93,18 @@ class Personagem {
   }
   
   class Cartoleiro extends Personagem {
+    #sorte = 30;
+  
     constructor(nome) {
       super(nome);
-      this.sorte = 30;
+    }
+  
+    get sorte() {
+      return this.#sorte;
+    }
+  
+    set sorte(valor) {
+      this.#sorte = valor;
     }
   
     atacar() {
